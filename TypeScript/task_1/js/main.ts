@@ -11,6 +11,10 @@ interface Teacher {
     numberOfReports: number;
   }
 
+  interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+  }
+
   const teacher3: Teacher = {
     firstName: 'John',
     lastName: 'Doe',
@@ -27,5 +31,10 @@ interface Teacher {
     numberOfReports: 17,
   };
 
+  const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+  };
 
-console.log(JSON.stringify(teacher3, null, 2));
+console.log(teacher3);
+console.log(director1);
+console.log(printTeacher("John", "Doe"));

@@ -4,14 +4,9 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "strict": true,
-    "module": "ES6",
-    "target": "ES5",
+    "module": "es6",
+    "target": "es5",
     "allowJs": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+    "moduleResolution": "node"
+  }
 }

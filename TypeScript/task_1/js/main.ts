@@ -16,4 +16,4 @@ interface Teacher {
   };
 
 
-console.log(teacher3);
+console.log(JSON.stringify(teacher3, null, 2));

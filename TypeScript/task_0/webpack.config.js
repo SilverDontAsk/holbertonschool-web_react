@@ -12,6 +12,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
+          transpileOnly: true
         }
       }
     ]
@@ -20,7 +21,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"]
   },
   devServer: {
-    static: './dist'
+    contentBase: "./dist"
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
@@ -32,6 +33,5 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
-  },
-  mode: 'development',
+  }
 };

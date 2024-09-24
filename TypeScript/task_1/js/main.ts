@@ -7,12 +7,24 @@ interface Teacher {
     [propName: string]: any;
   }
 
+  interface Directors extends Teacher {
+    numberOfReports: number;
+  }
+
   const teacher3: Teacher = {
     firstName: 'John',
     lastName: 'Doe',
     fullTimeEmployee: false,
     location: 'London',
     contract: false
+  };
+
+  const director1: Directors = {
+    firstName: 'The',
+    lastName: 'Batman',
+    location: 'Gotham',
+    fullTimeEmployee: true,
+    numberOfReports: 17,
   };
 
 

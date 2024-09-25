@@ -1,4 +1,6 @@
 
+type Subjects = "Math" | "History";
+
 interface DirectorInterface {
     workFromHome(): string;
     getCoffeeBreak(): string;
@@ -47,6 +49,29 @@ class Director implements DirectorInterface {
     }
   }
 
-  console.log(createEmployee(200));
-  console.log(createEmployee(1000));
-  console.log(createEmployee('$500'));
+  function isDirector(employee: Director | Teacher): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+  }
+
+  function executeWork(employee: Director | Teacher): string {
+    if (isDirector(employee)) {
+      return employee.workDirectorTasks();
+    } else {
+      return employee.workTeacherTasks();
+    }
+  }
+
+  function teachClass(todayClass: Subjects): string {
+    if (todayClass === "Math") {
+      return "Teaching Math";
+    } else if (todayClass === "History") {
+      return "Teaching History";
+    }
+    throw new Error("Class does not exist");
+  }
+
+  executeWork(createEmployee(200));
+  executeWork(createEmployee(1000));
+  teachClass('Math');
+  teachClass('History');
+  
